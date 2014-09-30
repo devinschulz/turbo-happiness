@@ -1,0 +1,18 @@
+{{ template "theme/partials/header.html" . }}
+
+{{ template "theme/partials/sidebar.html" . }}
+
+{{ range .Data.Pages }}
+    <h1>{{ .Title }}</h1>
+
+    {{ .Date.Format "02 Jan 2006, 15:04" }}
+    
+    {{ if isset .Params "categories" }}
+        {{ range .Params.categories }}<a href="/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
+    {{ end }}
+
+    {{ .Summary }}
+
+{{ end }}
+
+{{ template "theme/partials/footer.html" . }}

@@ -1,0 +1,10 @@
+name = "iDev"
+description = ""
+source_repo = "https://github.com/iDevSchulz/turbo-happiness"
+tags = ["blog", "purecss"]
+
+[author]
+    name = "Devin Schulz"
+    twitter = "http://twitter.com/iDevSchulz"
+    url = "http://github.com/iDevSchulz"
+

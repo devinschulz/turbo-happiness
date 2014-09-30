@@ -1,0 +1,21 @@
+---
+
+title:              Devin Schulz
+baseurl:            
+pygmentsuseclasses: true 
+theme:              idev
+
+Taxonomies:
+  tag:              tags
+  category:         categories
+
+params:
+  inc:
+    title:        "Devin Schulz"
+    subtitle:     ""
+    cover_image:  blog-cover.jpg
+    logo:         logo.png
+
+menu: main
+    
+---

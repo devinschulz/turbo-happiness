@@ -1,0 +1,6 @@
+<ul>
+{{ $data := .Data }}
+{{ range $key, $value := .Data.Taxonomy.Alphabetical }}
+  <li><a href="{{ $data.Plural }}/{{ $value.Name | urlize }}"> {{ $value.Name }} </a> {{ $value.Count }} </li>
+{{ end }}
+</ul>
