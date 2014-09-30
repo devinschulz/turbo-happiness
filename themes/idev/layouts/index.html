@@ -2,18 +2,18 @@
 
 {{ template "theme/partials/sidebar.html" . }}
 
-{{range where .Data.Pages "Section" "articles"}}
+{{ range first 5 (where .Data.Pages "Section" "articles") }}
 
     <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
     {{ .Date.Format "02 Jan 2006, 15:04" }}
 
     {{ if isset .Params "categories" }}
-        {{ range .Params.categories }}<a href="/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
+        {{ range .Params.categories }}<a href="/categories/{{ . | urlize | lower }}">{{ . }}</a>{{ end }}
     {{ end }}
 
     <ul id="tags">
       {{ range .Params.tags }}
-        <li><a href="tags/{{ . | urlize }}">{{ . }}</a> </li>
+        <li><a href="tags/{{ . | urlize | lower }}">{{ . }}</a> </li>
       {{ end }}
     </ul>
 
