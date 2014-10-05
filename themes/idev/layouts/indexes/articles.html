@@ -1,0 +1,22 @@
+{{ template "theme/partials/header.html" . }}
+
+{{ template "theme/partials/sidebar.html" . }}
+
+<h1>Article Archive</h1>
+
+{{ range .Data.Pages }}
+  <article>
+    <h2><a href="{{.Permalink}}" title="View {{ .Title }}">{{ .Title }}</a></h2>
+
+    <time pubdate datetime="{{ .Date.Format "2006-01-02" }}" title="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 02, 2006" }}</time>
+    
+    {{ if isset .Params "categories" }}
+        {{ range .Params.categories }}<a href="/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
+    {{ end }}
+
+    {{ .Summary }}
+  </article>
+{{ end }}
+
+
+{{ template "theme/partials/footer.html" . }}

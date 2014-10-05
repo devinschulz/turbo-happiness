@@ -1,0 +1,23 @@
+{{ template "theme/partials/header.html" . }}
+
+{{ range .Data.Pages }}
+  
+    <h1><a href="{{.Permalink}}">{{ .Title }}</a></h1>
+
+    {{ if isset .Params "categories" }}
+      <ul>
+        {{ range .Params.categories }}<li><a href="/categories/{{ . | urlize }}">{{ . }}</a></li>{{ end }}
+      </ul>
+    {{ end }}
+    
+    {{ if isset .Params "tags" }}
+      <ul>
+        {{ range .Params.tags }}<li><a href="/tags/{{ . | urlize }}">{{ . }}</a></li>{{ end }}
+      </ul>
+    {{ end }}
+
+    {{ .Summary }}
+
+{{ end }}
+
+{{ template "theme/partials/footer.html" . }}
