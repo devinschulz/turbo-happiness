@@ -1,9 +1,0 @@
-{{ template "theme/partials/header.html" . }}
-  
-  <h1>Blog Archive</h1> 
-  {{ range .Data.Pages }}
-    {{.Title}}
-  {{ end }}
-</article>
-
-{{ template "theme/partials/footer.html" . }}
