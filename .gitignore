@@ -29,3 +29,4 @@ Temporary Items
 *.sublime-workspace
 sftp-config.json
 .idea
+themes/idev/assets/vendors

@@ -1,0 +1,113 @@
+// Default Window Widths
+$widths: (
+  mobile: 320,
+  mobile-landscape: 480,
+  tablet: 768,
+  desktop: 960,
+  super: 1120
+);
+
+// Set the breakpoints for Neat
+// Convert Default Window Widths to Em's
+// Use: @include media(map_get($breakpoint, desktop)) {}
+$breakpoint: (
+  mobile: new-breakpoint(em(map_get($widths, mobile)), 4),
+  mobile-landscape: new-breakpoint(em(map_get($widths, mobile-landscape)), 6),
+  tablet: new-breakpoint(em(map_get($widths, tablet)), 6),
+  desktop: new-breakpoint(em(map_get($widths, desktop)), 12),
+  super: new-breakpoint(em(map_get($widths, super)), 16),
+);
+
+// Neat Overrides
+$grid-columns: 4;
+$max-width: unquote(map_get($widths, desktop) + 'px');
+
+// Sassline
+
+// Breakpoint sizes in ems. Add more values here to add more breakpoints.
+// Change names if you prefer, it wont break the mixin as long as they are strings not just numbers.
+// Note: not relative to root font-size.
+$breakpoints: (
+  break-0: 0,
+  break-1: map_get($widths, mobile-landscape),
+  break-2: map_get($widths, tablet),
+  break-3: map_get($widths, desktop),
+  break-4: map_get($widths, super)
+);
+
+// Root font-sizes for each breakpoint. Set to half desired line-height of body text.
+// ! Make sure to have as many sizes as breakpoints above.
+$rootsizes: (
+  rootsize-0: 13,   // 24px line-height body text
+  rootsize-1: 14,   // 28px line-height body text
+  rootsize-2: 15,   // 30px line-height body text
+  rootsize-3: 17,   // 34px line-height body text
+  rootsize-4: 18    // 36px line-height body text
+);
+
+// Control the line-length with max-width values for the container.
+// Aim for 75–100 characters a line when possible, at smaller sizes type size is more important.
+// ! Make sure to have as many widths as breakpoints above.
+$maxwidths: (
+  maxwidth-0: 500,  // 500px wide
+  maxwidth-1: 550,  // 550px wide
+  maxwidth-2: 600,  // 600px wide
+  maxwidth-3: 680,  // 680px wide
+  maxwidth-4: 750   // 750px wide
+);
+
+// Add typefaces here.
+// Add weight and style details too.
+// Set cap height to set to the baseline.
+$bodytype: (
+  font-family: 'Georgia, serif',
+  regular: 400,
+  bold: 700,
+  italic: italic,
+  cap-height: 0.66
+);
+
+$headingtype: (
+  font-family: $helvetica,
+  regular: 400,
+  bold: 700,
+  cap-height: 0.65
+);
+
+$monospacetype: (
+  font-family: 'Menlo, monospace',
+  regular: 400,
+  cap-height: 0.68
+);
+
+// Here are some cap-height sizes to get you started:
+// Georgia: 0.66, Times / Times New Roman: 0.65, Palatino: 0.52
+// Lucida Grande: 0.72, Helvetica: 0.65, Verdana: 0.76, Tahoma: 0.76
+
+$headingColour: #4A4A4A;
+$bodyColour: #4A4A4A;
+$linkColour: #7F68B5;
+$hoverColour: #494949;
+$captionColour: #A8A8A8;
+$gray: #979797;
+$white: #FFFFFF;
+$primary: $linkColour;
+$secondary: #8CC152;
+
+// Background colours.
+$headBackgroundColour: #29323A;
+$backgroundColour: #fafafa;
+$codeBackgroundColour: #29323A;
+
+// Z-Index
+$zindex: (
+  1: 100,
+  2: 200,
+  3: 300,
+  4: 400,
+  5: 500,
+  6: 600,
+  7: 700,
+  8: 800,
+  9: 900
+);

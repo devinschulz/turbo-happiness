@@ -2,14 +2,16 @@
 
 {{ range first 10 (where .Data.Pages "Section" "work") }}
     <article>
-       <h2>{{ .Title }}</h2>
-       <ul>
-            {{range .Params.categories}}
-           <li><a href="/categories/{{ . | urlize }}">{{ . }}</a></li>
-            {{end}}
-       </ul>
-       <p>{{.Params.excerpt}}</p>
-       <a href="{{.Permalink}}" title="View {{.Title}}">View Project</a>
+      <div class="container">
+         <h2>{{ .Title }}</h2>
+         <ul>
+              {{range .Params.categories}}
+             <li><a href="/categories/{{ . | urlize }}">{{ . }}</a></li>
+              {{end}}
+         </ul>
+         <p>{{.Params.excerpt}}</p>
+         <a href="{{.Permalink}}" title="View {{.Title}}">View Project</a>
+      </div>
    </article>
 {{ end }}
 
