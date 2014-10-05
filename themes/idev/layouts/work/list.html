@@ -1,0 +1,22 @@
+{{ template "theme/partials/header.html" . }}
+
+<h1>{{.Title}}</h1>
+
+{{ range .Data.Pages }}
+  
+    <h1><a href="{{.Permalink}}">{{ .Title }}</a></h1>
+    {{ .FuzzyWordCount }}
+    
+    {{ if isset .Params "categories" }}
+        {{ range .Params.categories }}<a href="/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
+    {{ end }}
+
+    {{ if isset .Params "tags" }}
+        {{ range .Params.tags }}<a href="/tags/{{ . | urlize }}">{{ . }}</a>{{ end }}
+    {{ end }}
+
+    {{ .Summary }}
+
+{{ end }}
+
+{{ template "theme/partials/footer.html" . }}

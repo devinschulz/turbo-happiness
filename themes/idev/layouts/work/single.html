@@ -1,0 +1,22 @@
+{{ template "theme/partials/header.html" . }}
+
+<h1>{{ .Title }}</h1>
+{{ .Date.Format "02 Jan 2006, 15:04" }}
+
+{{ if isset .Params "categories" }}
+    {{ range .Params.categories }}<a href="/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
+{{ end }}
+
+{{ with .Params.website }}
+  <a href="{{.}}" target="_blank">View website</a>
+{{end}}
+
+<ul id="tags">
+  {{ range .Params.tags }}
+    <li><a href="/tags/{{ . | urlize | lower }}">{{ . }}</a> </li>
+  {{ end }}
+</ul>
+
+{{ .Content }}
+
+{{ template "theme/partials/footer.html" . }}
