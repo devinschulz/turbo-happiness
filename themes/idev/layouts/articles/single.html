@@ -2,7 +2,7 @@
 
 {{ template "theme/partials/sidebar.html" . }}
 
-<h1>{{ .Title }}</h1> article single
+<h1>{{ .Title }}</h1>
 {{ .Date.Format "02 Jan 2006, 15:04" }}
 
 {{ if isset .Params "categories" }}
