@@ -1,23 +1,16 @@
 {{ template "theme/partials/header.html" . }}
 
-{{ template "theme/partials/sidebar.html" . }}
-
-{{ range first 5 (where .Data.Pages "Section" "articles") }}
-
-    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    {{ .Date.Format "02 Jan 2006, 15:04" }}
-
-    {{ if isset .Params "categories" }}
-        {{ range .Params.categories }}<a href="/categories/{{ . | urlize | lower }}">{{ . }}</a>{{ end }}
-    {{ end }}
-
-    <ul id="tags">
-      {{ range .Params.tags }}
-        <li><a href="tags/{{ . | urlize | lower }}">{{ . }}</a> </li>
-      {{ end }}
-    </ul>
-
-    {{ .Content }}
+{{ range first 10 (where .Data.Pages "Section" "work") }}
+    <article>
+       <h2>{{ .Title }}</h2>
+       <ul>
+            {{range .Params.categories}}
+           <li><a href="/categories/{{ . | urlize }}">{{ . }}</a></li>
+            {{end}}
+       </ul>
+       <p>{{.Params.excerpt}}</p>
+       <a href="{{.Permalink}}" title="View {{.Title}}">View Project</a>
+   </article>
 {{ end }}
 
 {{ template "theme/partials/footer.html" . }}
