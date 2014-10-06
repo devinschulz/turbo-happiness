@@ -10,19 +10,6 @@ a {
   }
 }
 
-// Nice underlines for text links.
-p a, li a {
-  background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,lighten($linkColour,30%) 50%);
-  background-repeat: repeat-x;
-  background-size: 2px 2px;
-  background-position: 0 90%;
-  text-shadow: 1px 0 #FFF,2px 0 #FFF,-1px 0 #FFF,-2px 0 #FFF;
-
-  &:hover, &:active, &:focus {
-    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,lighten($hoverColour,30%) 50%);
-  }
-}
-
 p {
   font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
   @include baseline($fontsize: zeta, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: all);

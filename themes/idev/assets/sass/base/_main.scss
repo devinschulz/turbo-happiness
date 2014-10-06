@@ -12,3 +12,11 @@ body {
   font-weight: map-get($bodytype, regular);
   @include fontsize(zeta, all);
 }
+
+img {
+  max-width: 100%;
+}
+
+svg {
+  max-height: 100%;
+}
