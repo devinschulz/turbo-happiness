@@ -1,0 +1,59 @@
+@include media(map_get($breakpoint, mobile-max)) {
+  .bars {
+    align-self: flex-end;
+    cursor: pointer;
+    border: 1px solid $lines;
+    width: rem(60);
+    float: right;
+    padding: rem(10) rem(15) rem(10);
+    display: block;
+    height: rem(40);
+    border-radius: 4px;
+    &:hover,
+    &:focus {
+      background: $backgroundColour;
+    }
+  }
+
+  .bar {
+    display: block;
+    float: left;
+    width: 22px;
+    height: 2px;
+    margin-bottom: 2px;
+    background: $bodyColour;
+    opacity: 1;
+    position: relative;
+    transition: all 0.1s ease;
+  }
+
+  .bar--two {
+    max-width: em(12);
+  }
+
+  .bar--three {
+    max-width: em(16);
+  }
+
+  .bar--four {
+    margin-bottom: 0;
+  }
+
+  .is--open {
+    .bar--one,
+    .bar--four {
+      opacity: 0;
+      transform: rotate(45deg);
+    }
+    .bar--two {
+      transform: rotate(45deg);
+      max-width: 22px;
+      top: 2px;
+    }
+    .bar--three {
+      transform: rotate(-45deg);
+      max-width: 22px;
+      top: -2px;
+    }
+  }
+}

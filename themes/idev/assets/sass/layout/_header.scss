@@ -1,3 +1,129 @@
-.site__header {
+.header {
+  @extend %row;
+  padding: rem(10) 0;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+}
+
+.header__nav {
+  float: left;
+  width: 100%;
+}
+
+.header__toggle,
+.header__logo {
+  @include span-columns(2 of 4, inline-block);
+}
+
+.header__logo {
+  padding-top: rem(3);
+  svg {
+    @include size(rem(68) rem(31))
+  }
+}
+
+.header__toggle {
+  @include omega();
+}
+
+.header__nav__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.header__nav__list__item {
+  text-transform: uppercase;
+  font-weight: map_get($bodytype, semi);
+  a {
+    font-size: rem(16);
+    display: block;
+    letter-spacing: em(1.5);
+
+  }
+}
+
+@include media(map_get($breakpoint, mobile-max)) {
+
+  .header {
+    background: $white;
+    border-bottom: 1px solid $lines;
+  }
+
+  .header__nav {
+    display: none;
+    &.is--open {
+      display: block;
+    }
+  }
+
+  .header__logo {
+    path {
+      fill: $bodyColour;
+    }
+  }
+
+  .header__nav {
+    margin-top: rem(10);
+  }
+
+  .header__nav__list__item {
+    display: block;
+    margin-left: 0;
+    text-align: center;
+    border-bottom: 1px solid lighten($lines, 10%);
+    &:last-child {
+      border-bottom: none;
+    }
+    &:hover {
+      a {
+        background: $backgroundColour;
+      }
+    }
+    a {
+      font-size: rem(16);
+      display: block;
+      @include fill-parent;
+      padding: rem(10);
+      color: $bodyColour;
+    }
+  }
+}
+
+@include media(map_get($breakpoint, mobile-landscape)) {
+
+  .header__toggle {
+    display: none;
+  }
+
+  .header__logo {
+    width: auto;
+    margin-right: 0;
+  }
+
+  .header__nav__list__item {
+    margin-left: rem(30);
+    a {
+      color: $gray;
+      font-size: rem(14);
+    }
+  }
+
+  .header__nav__list__item {
+    display: inline-block;
+  }
+
+}
+
+@include media(map_get($breakpoint, tablet)) {
+
+  .header__nav__list__item {
+    a {
+      font-size: rem(11);
+    }
+  }
 
 }
