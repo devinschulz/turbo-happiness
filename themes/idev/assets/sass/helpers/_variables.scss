@@ -1,8 +1,11 @@
 // Default Window Widths
 $widths: (
   mobile: 320,
+  mobile-max: 479,
   mobile-landscape: 480,
+  mobile-landscape-max: 768,
   tablet: 768,
+  tablet-max: 959,
   desktop: 960,
   super: 1120
 );
@@ -12,7 +15,9 @@ $widths: (
 // Use: @include media(map_get($breakpoint, desktop)) {}
 $breakpoint: (
   mobile: new-breakpoint(em(map_get($widths, mobile)), 4),
+  mobile-max: new-breakpoint(max-width em(map_get($widths, mobile-max)), 4),
   mobile-landscape: new-breakpoint(em(map_get($widths, mobile-landscape)), 6),
+  mobile-landscape-max: new-breakpoint(max-width em(map_get($widths, mobile-landscape-max)), 6),
   tablet: new-breakpoint(em(map_get($widths, tablet)), 6),
   desktop: new-breakpoint(em(map_get($widths, desktop)), 12),
   super: new-breakpoint(em(map_get($widths, super)), 16),
@@ -60,15 +65,17 @@ $maxwidths: (
 // Add weight and style details too.
 // Set cap height to set to the baseline.
 $bodytype: (
-  font-family: 'Georgia, serif',
+  font-family: "'Open Sans', sans-serif",
+  light: 300,
   regular: 400,
+  semi: 600,
   bold: 700,
   italic: italic,
   cap-height: 0.66
 );
 
 $headingtype: (
-  font-family: $helvetica,
+  font-family: "'Open Sans', sans-serif",
   regular: 400,
   bold: 700,
   cap-height: 0.65
@@ -93,6 +100,7 @@ $gray: #979797;
 $white: #FFFFFF;
 $primary: $linkColour;
 $secondary: #8CC152;
+$lines: #D8D8D8;
 
 // Background colours.
 $headBackgroundColour: #29323A;
