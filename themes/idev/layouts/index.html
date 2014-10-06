@@ -1,18 +1,29 @@
 {{ template "theme/partials/header.html" . }}
+  <div class="masthead__content">
+    <div class="container">
+      <h1 class="masthead__title">I <strong>design</strong> & <strong>develop</strong><br> interfaces for humans</h1>
+    </div>
+  </div>
+</div>
 
-{{ range first 10 (where .Data.Pages "Section" "work") }}
-    <article>
-      <div class="container">
-         <h2>{{ .Title }}</h2>
-         <ul>
-              {{range .Params.categories}}
-             <li><a href="/categories/{{ . | urlize }}">{{ . }}</a></li>
-              {{end}}
-         </ul>
-         <p>{{.Params.excerpt}}</p>
-         <a href="{{.Permalink}}" title="View {{.Title}}">View Project</a>
-      </div>
-   </article>
+{{ range .Site.Menus.main }}
+<li><a href="{{.Url}}"> {{ .Name }} </a></li>
+{{end}}
+
+{{ range $index, $elem := first 10 (where .Data.Pages "Section" "work") }}
+{{$count := add $index 1}}
+<article class="work {{if modBool $count 2}}work--left{{end}}">
+  <div class="container">
+     <h2>{{ .Title }}</h2>
+     <ul>
+          {{range .Params.categories}}
+         <li><a href="/categories/{{ . | urlize }}">{{ . }}</a></li>
+          {{end}}
+     </ul>
+     <p>{{.Params.excerpt}}</p>
+     <a href="{{.Permalink}}" title="View {{.Title}}">View Project</a>
+  </div>
+</article>
 {{ end }}
 
 {{ template "theme/partials/footer.html" . }}

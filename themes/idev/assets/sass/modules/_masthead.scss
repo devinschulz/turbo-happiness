@@ -1,0 +1,29 @@
+.masthead {
+  @extend %row;
+  background: $primary;
+  path {
+    fill: $white;
+  }
+  .header__nav__list__item a {
+    color: rgba($white, 0.8);
+  }
+}
+
+.masthead__content {
+  padding: rem(100) 0;
+  @include media(map_get($breakpoint, tablet)) {
+    padding: rem(150) 0;
+  }
+  @include media(map_get($breakpoint, desktop)) {
+    padding: rem(200) 0;
+  }
+}
+
+.masthead__title {
+  font-weight: map_get($bodytype, light);
+  color: $white;
+  @include media(map_get($breakpoint, tablet)) {
+    font-size: rem(60);
+    line-height: 1.1;
+  }
+}
