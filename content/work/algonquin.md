@@ -1,17 +1,17 @@
 ---
-
-weight: 50
+weight: 100
 draft: true
-title: Bullfrog – Student Life
+title: Algonquin College
 categories: [Development]
 tags: [Wordpress, Sass, CoffeeScript]
 excerpt: Donec tincidunt at nulla ut porta. Nullam ac facilisis ex, fermentum rutrum purus. Praesent eget odio metus. Duis eleifend sem nulla, ac tristique quam hendrerit id. 
 agency: Soshal
 agency_url: http://soshal.ca
 website: http://studentlife.bullfrogpower.com
-featured_image: bullfrog-thumbnail.png
-featured_image_2x: bullfrog-thumbnail@2x.png
-featured_image_alt: Bullfrog Student Life Homepage
+slug: algonquin-college
+featured_image: algonquin-college-thumbnail.png
+featured_image_2x: algonquin-college-thumbnail@2x.png
+featured_image_alt: Algonquin College Homepage
 
 ---
 
