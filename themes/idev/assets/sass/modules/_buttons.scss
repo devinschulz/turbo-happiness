@@ -1,0 +1,27 @@
+.btn {
+  color: $white;
+  padding: rem(5) rem(15);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  float: left;
+  display: block;
+  @include media(map_get($breakpoint, tablet)) {
+    font-size: rem(14);
+  }
+  &:focus,
+  &:hover,
+  &:active {
+    color: $white;
+  }
+}
+
+.btn--primary {
+  background: $secondary;
+  &:focus,
+  &:hover {
+    background: darken($secondary, 5%);
+  }
+  &:active {
+    background: darken($secondary, 10%);
+  }
+}
