@@ -77,6 +77,7 @@ gulp.task 'scripts', ->
     .pipe $.coffee
       bare: true
     .pipe $.if config.environment is PRODUCTION, $.uglify()
+    .pipe $.concat "scripts.js"
     .pipe gulp.dest config.js_path
     .pipe $.livereload()
 

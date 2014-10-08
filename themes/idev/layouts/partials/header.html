@@ -10,9 +10,9 @@
   <link rel="canonical" href="{{ .Site.BaseUrl }}">
   <title>
     {{ if eq .Url "/" }}
-      {{ .Site.Params.Title }} &middot; {{ .Site.Params.Tagline }}
+      {{ .Site.Params.inc.title }} &middot; {{ .Site.Params.inc.tagline }}
     {{ else }}
-      {{ .Title }} &middot; {{ .Site.Params.Title }}
+      {{ .Title }} &middot; {{ .Site.Params.inc.title }}
     {{ end }}
   </title>
   <meta property="og:title" content="{{ .Site.Params.inc.title }}"/>
@@ -51,7 +51,7 @@
           <li class="header__nav__list__item"><a href="{{ .Site.BaseUrl }}/articles">Articles</a></li>
           <li class="header__nav__list__item"><a href="{{ .Site.BaseUrl }}/work">Work</a></li>
           <li class="header__nav__list__item"><a href="{{ .Site.BaseUrl }}/about">About</a></li>
-          <li class="header__nav__list__item header__nav__list__item--contact"><a href="#">Contact</a></li>
+          <li class="header__nav__list__item header__nav__list__item--contact"><a href="#">Hire Me</a></li>
         </ul>
       </nav>
     </div>

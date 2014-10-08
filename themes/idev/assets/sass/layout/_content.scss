@@ -1,7 +1,7 @@
 .container {
   @include outer-container();
   padding: 0 rem(15);
-  @include media(map_get($breakpoint, desktop)) {
+  @include media(map_get($breakpoint, super)) {
     padding: 0;
   }
 }

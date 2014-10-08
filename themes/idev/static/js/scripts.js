@@ -1,9 +1,11 @@
+
+
 'use strict';
 var SetEmail, clicked, datajs, isMobile, navList, navToggle, navigation,
   __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
 datajs = function(selector) {
-  return document.querySelectorAll("[data-js=" + selector + "]");
+  return document.querySelector("[data-js=" + selector + "]");
 };
 
 Element.prototype.addClass = function(className) {

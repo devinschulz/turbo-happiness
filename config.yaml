@@ -1,6 +1,7 @@
 ---
 
 title:              Devin Schulz
+tagline:            Designer & Developer
 baseurl:            
 pygmentsuseclasses: true 
 theme:              idev
@@ -11,10 +12,10 @@ Taxonomies:
 
 params:
   inc:
-    title:        "Devin Schulz"
-    subtitle:     ""
-    cover_image:  blog-cover.jpg
-    logo:         logo.png
+    title:        Devin Schulz
+    subtitle:     Designer & Developer
+    cover_image:
+    logo:
 
 menu: main
     

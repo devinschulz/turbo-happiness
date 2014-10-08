@@ -1,7 +1,7 @@
 'use strict'
 
 datajs = (selector) ->
-  document.querySelectorAll "[data-js=" + selector + "]"
+  document.querySelector "[data-js=" + selector + "]"
 
 Element::addClass = (className) ->
   unless @hasClass className

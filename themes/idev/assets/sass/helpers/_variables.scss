@@ -25,7 +25,7 @@ $breakpoint: (
 
 // Neat Overrides
 $grid-columns: 4;
-$max-width: unquote(map_get($widths, desktop) + 'px');
+$max-width: 1100px;
 
 // Sassline
 

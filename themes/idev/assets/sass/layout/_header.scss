@@ -9,8 +9,10 @@
 }
 
 .header__nav {
-  float: left;
-  width: 100%;
+  @include span-columns(4 of 4, inline-block);
+  @include media(map_get($breakpoint, mobile-max)) {
+    @include row()
+  }
 }
 
 .header__toggle,

@@ -6,22 +6,34 @@
   </div>
 </div>
 
-{{ range .Site.Menus.main }}
-<li><a href="{{.Url}}"> {{ .Name }} </a></li>
-{{end}}
-
 {{ range $index, $elem := first 10 (where .Data.Pages "Section" "work") }}
 {{$count := add $index 1}}
-<article class="work {{if modBool $count 2}}work--left{{end}}">
-  <div class="container">
-     <h2>{{ .Title }}</h2>
-     <ul>
-          {{range .Params.categories}}
-         <li><a href="/categories/{{ . | urlize }}">{{ . }}</a></li>
+<article class="work {{if modBool $count 2}}work--right{{else}}work--left{{end}}">
+  <div class="container work__wrapper">
+    <div class="work__content">
+       <h2>{{ .Title }}</h2>
+       <ul class="work__categories">
+          <li class="work__category">
+            <svg width="10" height="12" viewBox="0 0 10 12" xmlns="http://www.w3.org/2000/svg">
+              <title>View Categories</title>
+              <desc>View all related work and articles to a specific category</desc>
+              <path d="M9 0h-8c-.357 0-1 .6-1 1v11l5-2 5 2v-11c0-.4-.643-1-1-1z" stroke="#aaa" fill="#F0F0F0"/>
+            </svg>
+          </li>
+          {{range $index, $category := .Params.categories}}
+            <li class="work__category">{{if $index}}<span class="work__comma">,</span>{{end}}<a href="/categories/{{ . | urlize }}">{{ . }}</a></li>
           {{end}}
-     </ul>
-     <p>{{.Params.excerpt}}</p>
-     <a href="{{.Permalink}}" title="View {{.Title}}">View Project</a>
+       </ul>
+       <p class="work__excerpt">{{.Params.excerpt}}</p>
+       <a href="{{.Permalink}}" class="work__action btn btn--primary" title="View {{.Title}}">View Project</a>
+    </div>
+    <div class="work__thumbnail">
+      {{ if isset .Params "featured_image" }}
+      <figure class="work__thumbnail__figure">
+        <img class="work__thumbnail__image" src="/img/{{ .Params.featured_image }}" {{if isset .Params "featured_image_alt"}}alt="{{.Params.featured_image_alt}}"{{end}}{{ if isset .Params "featured_image_2x" }} srcset="/img/{{ .Params.featured_image_2x }} 2x"{{end}}/>
+      </figure>
+      {{end}}
+    </div>
   </div>
 </article>
 {{ end }}

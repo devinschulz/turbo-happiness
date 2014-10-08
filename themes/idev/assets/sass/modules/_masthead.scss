@@ -4,8 +4,14 @@
   path {
     fill: $white;
   }
-  .header__nav__list__item a {
-    color: rgba($white, 0.8);
+  @include media(map_get($breakpoint, mobile-landscape)) {
+    .header {
+      position: absolute;
+      top: 0;
+    }
+    .header__nav__list__item a {
+      color: rgba($white, 0.8);
+    }
   }
 }
 
